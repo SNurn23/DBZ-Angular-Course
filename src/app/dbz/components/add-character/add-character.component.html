@@ -1,0 +1,27 @@
+<h4>Agregar personaje</h4>
+<form class="row" (ngSubmit)="emiteCharacter()" > <!-- (click) se puede poner en cualquier objeto y va a reaccionar al click
+                                    (ngSubmit)-> es un evento especial de angular que ayuda con la propagación de formulario para evitar que se recargue el navegador -->
+  <input type="text"
+  [(ngModel)]="character.name"
+  name="name"
+  class="form-control mb-2"
+  placeholder="Nombre">
+
+  <input type="number"
+  [(ngModel)]="character.power"
+  name="power"
+  class="form-control mb-2"
+  placeholder="Poder">
+
+  <button type="submit" class="btn btn-primary">
+    Agregar
+  </button>
+  <!-- <pre>{{character | json}}</pre>   json -> pipe (tuberia) -->
+</form>
+
+<!-- Cuando ponemos "()" hacemos referencias a eventos
+      y cuando ponemos "[]" hacemos referencias a atributos
+
+
+  Otro dato: Sintaxis "Caja de banana" para asociar un evento y antributo al mismo tiempo para hacer Two way data binding
+ -->

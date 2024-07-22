@@ -1,0 +1,46 @@
+<h1>DBZ personajes</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- UTILIZANDO SERVICIOS PUBLICOS -->
+     <!-- Aquí se importa el servicio y se utiliza para obtener la lista de personajes -->
+     <!-- BORRAR SIN USAR ID
+       <list-dbz [characterList]="dbzService.characters"
+          (onDelete)="dbzService.onDeleteCharacter($event)">
+        </list-dbz>
+      -->
+
+      <!-- UTILIZANDO SERVICIOS PRIVADOS -->
+      <!-- BORRAR USANDO ID CON UUID-->
+       <list-dbz [characterList]="characters"
+              (onDelete)="onDeleteCharacter($event)">
+        </list-dbz>
+
+
+    <!-- ESTO ES SIN USAR SERVICIOS
+    <list-dbz [characterList]="characters"
+              (onDelete)="onDeleteCharacter($event)">
+    </list-dbz>
+    -->
+
+  </div>
+
+  <div class="col">
+    <!-- UTILIZANDO SERVICIOS PUBLICOS
+      <dbz-add-character
+        (onNewCharacter)="dbzService.onNewCharacter($event)">
+      </dbz-add-character>
+    -->
+
+    <!-- UTILIZANDO SERVICIOS PRIVADOS-->
+    <dbz-add-character
+      (onNewCharacter)="onNewCharacter($event)">
+    </dbz-add-character>
+
+    <!-- SIN USAR SERVICIOS
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character> Aca se debe emitir los personajes
+                                         $event -> se va a utilizar para recibir los valores desde el form para enviar hacia el componente hijo
+    -->
+  </div>
+</div>
